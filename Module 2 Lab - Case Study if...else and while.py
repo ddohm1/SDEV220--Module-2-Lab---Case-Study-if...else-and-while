@@ -7,14 +7,17 @@
 
 print("Honor Roll and Dean's List Check!")
 
-last_name = input("Please enter the student's last name or type ZZZ to quit. ")
-while last_name != "ZZZ":
+
+while True:
+    last_name = input("Please enter the student's last name or type ZZZ to quit. ")
+    if last_name == "ZZZ":
+        break
     first_name = input("Please enter the student's first name. ")
     while True:
             try:
                 gpa = float(input("Please enter the student's GPA. "))
-                if gpa > 4.0:
-                    print("Error: GPA cannot be above 4.0.")
+                if gpa > 4.0 or gpa < 0.0:
+                    print("Error: GPA cannot be above 4.0 or below 0.0.")
                     continue
                 break
             except ValueError:
@@ -26,7 +29,7 @@ while last_name != "ZZZ":
         print(first_name, last_name, "has made the Honor Roll ")
     if gpa < 3.25:
         print(first_name, last_name,"does not qualify for either the Dean's List or the Honor's Roll.")
-    last_name = input("Please enter the student's last name or type ZZZ to quit. ")
+   
 
 print("Have a nice day!")
 
