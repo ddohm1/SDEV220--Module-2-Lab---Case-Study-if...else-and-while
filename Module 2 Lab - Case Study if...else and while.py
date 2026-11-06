@@ -13,9 +13,13 @@ while last_name != "ZZZ":
     while True:
             try:
                 gpa = float(input("Please enter the student's GPA. "))
+                if gpa > 4.0:
+                    print("Error: GPA cannot be above 4.0.")
+                    continue
                 break
             except ValueError:
-                 print("Invalid input.")               
+                 print("Invalid input.")   
+    
     if gpa >= 3.5:
         print(first_name, last_name, "has made the Dean's List. ")
     if gpa >= 3.25:
@@ -25,3 +29,4 @@ while last_name != "ZZZ":
     last_name = input("Please enter the student's last name or type ZZZ to quit. ")
 
 print("Have a nice day!")
+
